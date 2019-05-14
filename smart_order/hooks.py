@@ -82,6 +82,10 @@ app_license = "MIT"
 doc_events = {
 	"Sales Order": {
 		"on_submit": "smart_order.smart_order.smart_order.makeMR"
+	},
+	"Item": {
+		"after_insert": "smart_order.smart_order.smart_order.addBarcode",
+		"validate": "smart_order.smart_order.smart_order.updateBarcode"
 	}
 }
 

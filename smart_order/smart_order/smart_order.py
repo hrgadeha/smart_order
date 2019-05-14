@@ -21,3 +21,26 @@ def makeMR(doc,method):
 			})
 			mr.insert(ignore_permissions=True)
 			mr.save()
+
+def addBarcode(doc,method):
+	if not doc.barcode:
+		br = frappe.get_doc({
+		"doctype" : "Barcode Print",
+		"item_code" : doc.item_code,
+		"item_name" : doc.item_name,
+		"barcode" : doc.barcode,
+		"item_price":doc.standard_rate
+		})
+		br.insert(ignore_permissions=True)
+		br.save()
+	else:
+		pass
+
+def updateBarcode(doc,method):
+	if doc.barcode:
+		br = frappe.get_doc("Barcode Print",doc.item_code)
+		br.barcode = doc.barcode
+		br.item_price = doc.standard_rate
+		br.save()
+	else:
+		pass
