@@ -78,7 +78,6 @@ app_license = "MIT"
 # Document Events
 # ---------------
 # Hook on document methods and events
-
 doc_events = {
 	"Sales Order": {
 		"on_submit": "smart_order.smart_order.smart_order.makeMR"
@@ -88,27 +87,14 @@ doc_events = {
 		"validate": "smart_order.smart_order.smart_order.updateBarcode"
 	}
 }
-
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"smart_order.tasks.all"
-# 	],
-# 	"daily": [
-# 		"smart_order.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"smart_order.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"smart_order.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"smart_order.tasks.monthly"
-# 	]
-# }
+#scheduler_events = {
+#	"daily": [
+#		"smart_order.smart_order.dailyNotify.dailyNotify"
+#	]
+#}
 
 # Testing
 # -------
